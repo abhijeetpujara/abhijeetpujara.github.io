@@ -1746,3 +1746,60 @@ body {
         opacity: 0;
     }
 }
+
+/* Project Schema Badges */
+.badge {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-right: 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-primary {
+    background-color: var(--accent-color) !important;
+    color: #0f172a !important;
+}
+
+.badge-success {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+}
+
+.badge-info {
+    background-color: #6366f1 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .badge-primary {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+}
+
+/* Download Button Styling */
+.btn-sm {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: #0f172a !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+[data-theme="light"] .btn-primary {
+    background-color: #0284c7 !important;
+    border-color: #0284c7 !important;
+    color: #ffffff !important;
+}
