@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Toggle Logic ---
     const getTheme = () => {
         try {
-            return localStorage.getItem('theme') || 'light';
+            return localStorage.getItem('theme') || 'dark'; // Changed default to 'dark'
         } catch (e) {
             console.warn("localStorage not accessible:", e);
-            return 'light';
+            return 'dark'; // Changed fallback to 'dark'
         }
     };
 

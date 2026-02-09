@@ -33,6 +33,13 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+  <!-- Data Engineering Background -->
+  <div class="data-background">
+    <div class="pipeline-line"></div>
+    <div class="pipeline-line"></div>
+    <div class="pipeline-line"></div>
+  </div>
+  
   <main class="flex-shrink-0 container mt-5">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
@@ -67,17 +74,29 @@
     </nav>
     <div class="row justify-content-center align-items-center p-4">
       <div class="col-lg-4 col-md-6 text-center mt-4">
-        <div id="container" class="my-2">
+        <div id="container" class="my-2 profile-data-node">
           <div id="dummy"></div>
           <div id="element">
             <img src="assets/abhi.jpg" alt="Abhijeet Pujara" class="circle-image wow animated zoomIn"
               data-wow-delay=".1s">
+            <!-- Floating Tech Icons -->
+            <div class="tech-icon floating-azure"><i class="fab fa-microsoft"></i></div>
+            <div class="tech-icon floating-spark"><i class="fas fa-bolt"></i></div>
+            <div class="tech-icon floating-sql"><i class="fas fa-database"></i></div>
+            <div class="tech-icon floating-python"><i class="fab fa-python"></i></div>
           </div>
         </div>
-        <p class="text-muted wow animated slideInUp" data-wow-delay=".15s" id="typing-text"
-          data-text="I prefer coffee over tea, Jupyter Notebook over IDEs. never take people's opinion. Love this place like 127.0.0.1 (DATA is my thing).">
-          I prefer coffee over tea,<br> Jupyter Notebook over IDEs. <br> never take people's opinion. <br> Love this
-          place like 127.0.0.1 <br> (DATA is my thing).</p>
+        <div class="console-box mt-4 wow animated slideInUp" data-wow-delay=".15s">
+          <div class="console-header">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="console-title">abhijeet@portfolio: ~</span>
+          </div>
+          <div class="console-body">
+            <p class="text-muted" id="typing-text"
+              data-text="I prefer coffee over tea, Jupyter Notebook over IDEs. never take people's opinion. Love this place like 127.0.0.1 (DATA is my thing).">
+              Initializing data pipeline...</p>
+          </div>
+        </div>
         <a class="social mx-1" style="color: #6c757d" onMouseOver="this.style.color='#1da1f2'"
           onMouseOut="this.style.color='#6c757d'">
           <i class="fas fa-paw fa-f1b0"></i>

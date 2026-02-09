@@ -1399,3 +1399,188 @@ body {
         transform: scale(0.98)
     }
 }
+
+/* --- Data Engineering Esthetics --- */
+
+/* Pipeline Background */
+.data-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .data-background {
+    opacity: 0.25;
+}
+
+.pipeline-line {
+    position: absolute;
+    background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+    width: 2px;
+    height: 200px;
+    animation: flow 8s linear infinite;
+}
+
+.pipeline-line:nth-child(1) {
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.pipeline-line:nth-child(2) {
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.pipeline-line:nth-child(3) {
+    left: 85%;
+    animation-delay: 6s;
+}
+
+@keyframes flow {
+    0% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Profile Data Node */
+.profile-data-node {
+    position: relative;
+    padding: 20px;
+}
+
+.profile-data-node .circle-image {
+    position: relative;
+    z-index: 2;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+/* Floating Tech Icons */
+.tech-icon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    z-index: 3;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-azure {
+    top: 10%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.floating-spark {
+    bottom: 10%;
+    right: -5%;
+    animation-delay: 1s;
+}
+
+.floating-sql {
+    top: 10%;
+    left: -5%;
+    animation-delay: 2s;
+}
+
+.floating-python {
+    bottom: 10%;
+    left: -5%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Console Box */
+.console-box {
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+[data-theme="light"] .console-box {
+    background: #0f172a;
+    /* Keep it dark even in light mode for terminal look */
+}
+
+.console-header {
+    background: #334155;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.console-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.dot:nth-child(1) {
+    background: #ff5f56;
+}
+
+.dot:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.dot:nth-child(3) {
+    background: #27c93f;
+}
+
+.console-title {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.console-body {
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100px;
+}
+
+.console-body #typing-text {
+    color: #10b981 !important;
+    /* Green terminal text */
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+}
