@@ -5,8 +5,10 @@
     --text-color: #333333;
     --text-muted: #6c757d;
     --navbar-bg: rgba(255, 255, 255, 0.7);
+    --navbar-bg-rgb: 255, 255, 255;
     --card-bg: #ffffff;
     --accent-color: #007bff;
+    --accent-rgb: 0, 123, 255;
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.3);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -17,8 +19,10 @@
     --text-color: #f8fafc;
     --text-muted: #cbd5e1;
     --navbar-bg: rgba(15, 23, 42, 0.8);
+    --navbar-bg-rgb: 15, 23, 42;
     --card-bg: #1e293b;
     --accent-color: #38bdf8;
+    --accent-rgb: 56, 189, 248;
     --glass-bg: rgba(30, 41, 59, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
@@ -98,10 +102,15 @@ body {
 
 .navbar {
     background: var(--navbar-bg) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover {
+    background: rgba(var(--navbar-bg-rgb), 0.9) !important;
 }
 
 .badge {
@@ -132,8 +141,14 @@ body {
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    border: 5px solid var(--glass-border);
-    box-shadow: var(--shadow);
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(var(--accent-rgb), 0.3);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.circle-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(var(--accent-rgb), 0.6);
 }
 
 .social {
@@ -1615,137 +1630,6 @@ body {
     opacity: 0.2;
 }
 
-/* System Status Dashboard */
-.system-dashboard {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(30, 41, 59, 0.95);
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    padding: 12px 16px;
-    min-width: 200px;
-    box-shadow: var(--shadow);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease;
-}
-
-[data-theme="light"] .system-dashboard {
-    background: rgba(248, 250, 252, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-header {
-    color: #38bdf8;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--glass-border);
-    letter-spacing: 1px;
-}
-
-.dashboard-metric {
-    display: flex;
-    justify-content: space-between;
-    margin: 6px 0;
-    color: #cbd5e1;
-}
-
-[data-theme="light"] .dashboard-metric {
-    color: #475569;
-}
-
-.metric-label {
-    color: #94a3b8;
-}
-
-[data-theme="light"] .metric-label {
-    color: #64748b;
-}
-
-.metric-value {
-    color: #10b981;
-    font-weight: 600;
-}
-
-[data-theme="light"] .metric-value {
-    color: #059669;
-}
-
-.status-active {
-    color: #10b981;
-    animation: pulse-status 2s ease-in-out infinite;
-}
-
-@keyframes pulse-status {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.7;
-    }
-}
-
-/* Data Log Stream */
-.data-log {
-    background: rgba(15, 23, 42, 0.9);
-    border-top: 1px solid var(--glass-border);
-    padding: 8px 16px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 11px;
-    color: #f1f5f9;
-    /* Increased visibility */
-    overflow: hidden;
-    max-height: 60px;
-    transition: background-color 0.3s ease;
-}
-
-[data-theme="light"] .data-log {
-    background: rgba(241, 245, 249, 0.9);
-    color: #334155;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.log-line {
-    padding: 2px 0;
-    white-space: nowrap;
-    animation: scroll-log 40s linear infinite;
-    /* Slower speed */
-}
-
-.log-line:nth-child(2) {
-    animation-delay: 2s;
-}
-
-.log-line:nth-child(3) {
-    animation-delay: 4s;
-}
-
-@keyframes scroll-log {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-}
 
 /* Project Schema Badges */
 .badge {
