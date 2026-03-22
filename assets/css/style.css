@@ -81,11 +81,44 @@ body {
 }
 
 [data-theme="dark"] .social {
-    color: var(--text-color) !important;
+    color: var(--text-muted) !important;
 }
 
 [data-theme="dark"] .social:hover {
     color: var(--accent-color) !important;
+}
+
+/* Specific Social Brand Colors on Hover */
+.social.google:hover {
+    color: #db4437 !important;
+}
+
+.social.medium:hover {
+    color: #00ab6c !important;
+}
+
+.social.github:hover {
+    color: #333333 !important;
+}
+
+[data-theme="dark"] .social.github:hover {
+    color: #ffffff !important;
+}
+
+.social.linkedin:hover {
+    color: #007bb5 !important;
+}
+
+.social.twitter:hover {
+    color: #1da1f2 !important;
+}
+
+.social.instagram:hover {
+    color: #e1306c !important;
+}
+
+.social.envelope:hover {
+    color: #db4437 !important;
 }
 
 .text-muted {
@@ -211,6 +244,11 @@ body {
     box-shadow: var(--shadow);
 }
 
+[data-theme="dark"] .project.card:hover .card-title,
+[data-theme="dark"] .project.card:hover .card-text {
+    color: var(--text-color) !important;
+}
+
 .search-box {
     box-shadow: none !important;
     background: var(--card-bg) !important;
@@ -231,6 +269,11 @@ body {
 
 .article.card:hover {
     transform: translateY(-5px);
+}
+
+[data-theme="dark"] .article.card:hover .card-title,
+[data-theme="dark"] .article.card:hover .card-text {
+    color: var(--text-color) !important;
 }
 
 .article.card .card-footer {
@@ -1623,11 +1666,131 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: auto;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 [data-theme="light"] .data-particles {
-    opacity: 0.2;
+    opacity: 0.5;
+}
+
+/* ETL Log Styles */
+.console-body {
+    overflow-y: auto;
+    max-height: 250px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+.console-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.console-body::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+/* Scanning Effect on Profile */
+.profile-data-node {
+    position: relative;
+}
+
+.profile-data-node::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    animation: scan 4s linear infinite;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Data Infrastructure Widget */
+.infra-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    color: var(--text-color);
+    z-index: 100;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-label {
+    opacity: 0.7;
+}
+
+.status-value {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    box-shadow: 0 0 8px #10b981;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
 }
 
 

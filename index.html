@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" type="text/css" />
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -114,33 +115,26 @@
       by <strong>Abhijeet Pujara</strong>
     </small>
     <div class="container-fluid justify-content-center">
-      <a class="social mx-1"
-        href="https://www.google.com/search?q=Abhijeet+Pujara&stick=H4sIAAAAAAAAAOOwesRoyi3w8sc9YSmdSWtOXmNU4-IJSC0qzs8LTk0sSs4QEuNic80rySypFOKR4uLiMHXPrdA1KfPnWcTK75iUkZmVmlqiEFCalViUCABbxxogTAAAAA&sa=X&ved=2ahUKEwje4baP3ov9AhU4r1YBHVhSC08QnJoFegQIKRAG&biw=1536&bih=714&dpr=1.25"
-        style="color: #000101" onMouseOver="this.style.color='#1da1f2'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 google"
+        href="https://www.google.com/search?q=Abhijeet+Pujara&stick=H4sIAAAAAAAAAOOwesRoyi3w8sc9YSmdSWtOXmNU4-IJSC0qzs8LTk0sSs4QEuNic80rySypFOKR4uLiMHXPrdA1KfPnWcTK75iUkZmVmlqiEFCalViUCABbxxogTAAAAA&sa=X&ved=2ahUKEwje4baP3ov9AhU4r1YBHVhSC08QnJoFegQIKRAG&biw=1536&bih=714&dpr=1.25">
         <i class="fab fa-google"></i>
       </a>
-      <a class="social mx-1" href="https://abhijeetpujara.medium.com/" style="color: #6c757d"
-        onMouseOver="this.style.color='#1da1f2'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 medium" href="https://abhijeetpujara.medium.com/">
         <i class="fab fa-medium fa-1x"></i>
       </a>
-      <a class="social mx-1" href="https://github.com/abhijeetpujara" style="color: #6c757d"
-        onMouseOver="this.style.color='#333333'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 github" href="https://github.com/abhijeetpujara">
         <i class="fab fa-github fa-1x"></i>
       </a>
-      <a class="social mx-1" href="https://www.linkedin.com/in/abhijeet-pujara-150682114/" style="color: #6c757d"
-        onMouseOver="this.style.color='#007bb5'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 linkedin" href="https://www.linkedin.com/in/abhijeet-pujara-150682114/">
         <i class="fab fa-linkedin-in fa-1x"></i>
       </a>
-      <a class="social mx-1" href="https://twitter.com/pujara_abhijeet" style="color: #6c757d"
-        onMouseOver="this.style.color='#1da1f2'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 twitter" href="https://twitter.com/pujara_abhijeet">
         <i class="fab fa-twitter fa-1x"></i>
       </a>
-      <a class="social mx-1" href="https://www.instagram.com/iabhi_ap/" style="color: #6c757d"
-        onMouseOver="this.style.color='#3b5998'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 instagram" href="https://www.instagram.com/iabhi_ap/">
         <i class="fab fa-instagram fa-1x"></i>
       </a>
-      <a class="social mx-1" href="mailto:abhijeetpujara@gmail.com" style="color: #6c757d"
-        onMouseOver="this.style.color='#db4437'" onMouseOut="this.style.color='#6c757d'">
+      <a class="social mx-1 envelope" href="mailto:abhijeetpujara@gmail.com">
         <i class="fas fa-envelope fa-1x"></i>
       </a>
     </div>
@@ -151,9 +145,29 @@
   <script src="stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   <script> new WOW().init(); </script>
+  <!-- Data Infrastructure Widget -->
+  <div class="infra-widget wow animated fadeInRight" data-wow-delay="2s">
+    <div class="status-row">
+      <span class="status-label"><span class="pulse"></span>AZURE STATUS</span>
+      <span class="status-value" id="azure-status">NOMINAL</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">REGION</span>
+      <span class="status-value">CENTRAL INDIA</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">ADF TRIGGERS</span>
+      <span class="status-value" id="adf-status">ACTIVE</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">STORAGE</span>
+      <span class="status-value">ADLS GEN2</span>
+    </div>
+  </div>
+
   <script src="assets/js/card-animation.js"></script>
   <script src="assets/js/enhancements.js"></script>
-  <script src="assets/js/data-particles.js"></script>
+  <script src="assets/js/three-background.js"></script>
   <script>
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
